@@ -23,4 +23,8 @@
             }
         }
 
-    Solution 2 
+    Solution 2 - Three pointer (start from beginning)
+        - this essentially just avoids having to do the sort in place
+        - but it does duplicate the array..so not really good for space savings
+
+
