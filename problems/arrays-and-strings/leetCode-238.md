@@ -1,5 +1,5 @@
 
-# LeetCode -- 238. Product of Array Except Self
+# LeetCode -- 238. Product of Array Except Self (Medium)
 
     - so there are 2 caveats here that are important
     - 1st they explicitely mention to not use division which sort of takes you away from one of the first natural solutions
