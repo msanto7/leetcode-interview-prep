@@ -11,10 +11,10 @@
     - so we can scan through the array...save the smallest...and second smallest elements in order as we go...and then we fall into our else case when a number large then those 2 exists...and there we go...we have the sequence
 
 
-    # Primitive Solution - (Time: O(n), Space: O(n))
+# Primitive Solution - (Time: O(n), Space: O(n))
 
 
-    # Optimized Solution - (Time: O(n), Space: O(1))
+# Optimized Solution - (Time: O(n), Space: O(1))
 
         public class Solution {
             public bool IncreasingTriplet(int[] nums) {

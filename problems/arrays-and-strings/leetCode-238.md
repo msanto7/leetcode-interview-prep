@@ -9,7 +9,7 @@
     - and the optimization comes from doing 1 part of the prefix sum on the fly
 
 
-    # Primitive Solution - (Time: O(n), Space: O(n))
+# Primitive Solution - (Time: O(n), Space: O(n))
 
         public class Solution {
             public int[] ProductExceptSelf(int[] nums) {      
@@ -37,7 +37,7 @@
 
 
 
-    # Optimized for O(1) Solution - (Time: O(n), Space: O(1))
+# Optimized for O(1) Solution - (Time: O(n), Space: O(1))
 
         public class Solution {
             public int[] ProductExceptSelf(int[] nums) {      
