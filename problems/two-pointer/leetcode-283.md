@@ -7,9 +7,12 @@
 
 
 
-# Primitive Solution - (Time: O(n), Space: O(n))
+# Primitive Solution - (Time: O(n), Space: O(1))
+
+# Optimized Solution - (Time: O(n), Space: O(1))
 
     - first solution I came up with...
+    - this is actually pretty much the optimized solution actually
 
     public void MoveZeroes(int[] nums) {
         int left = 0;
@@ -39,7 +42,7 @@
 
 
 
-# Optimized Solution - (Time: O(n), Space: O(1))
+
 
 
 
