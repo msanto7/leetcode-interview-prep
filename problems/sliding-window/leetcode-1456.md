@@ -7,7 +7,7 @@
 
 
 
-# Primitive Solution - (Time: O(n), Space: O(1))
+# Optimized Solution - (Time: O(n), Space: O(1))
 
     - first solution ended up working out here...probably a better way to do this adding in a hashmap maybe?
     - but this is the same concept as leetcode 643...fixed sliding window...we do sort of a presum..then process the new incoming and outgoing letter 1 step at a time as the window moves..updating the max count along the way
