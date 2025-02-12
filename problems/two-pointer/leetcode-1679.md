@@ -12,7 +12,7 @@
 
 
 
-# Primitive Solution - (Time: O(n^2), Space: O(1))
+# Primitive Solution - (Time: O(n), Space: O(1)) (sort time as well though)
 
     public int MaxOperations(int[] nums, int k) {
         int numOps = 0;
