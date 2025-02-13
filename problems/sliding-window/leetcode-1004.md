@@ -8,14 +8,14 @@
 
     - this is also tricky because we have to keep track of the zeros just as much as we do the 1's count because we need to know where they can be flipped
     - so i will only be flipping zeros to connect to other subarrays of 1's
-    - 
 
 
 
-# Primitive Solution - (Time: O(n), Space: O(1))
+# Primitive Solution - (Time: O(n^2), Space: O(1))
 
     - okay so my first primitive solution wasn't too hard to get too
     - there is definitely an way to make it faster by tracking what is coming in and out of the window 1 at a times
+    - I am resetting the window every time so the time complexity ends up being quadratic in the worst case and O(n) in the best/average
 
     public int LongestOnes(int[] nums, int k) {
         int left = 0;
