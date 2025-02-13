@@ -55,7 +55,22 @@
 
 # Optimized Solution - (Time: O(n), Space: O(1))
 
+    -- the more efficient solution does the 1 by one and uses the pointers to track the num of consecutive 1's
+    -- we also use k to kee better track of what is going on instead of resetting all these int values
+    -- so this way we skip over more situations where we maxed the flips and left pointer doesn't help get us back to k = 0 (meaning max flips took place)
 
 
-
-
+    public int LongestOnes(int[] nums, int k) {
+        int left = 0, right = 0;
+        while (right < nums.Length) {
+            if (nums[right++] == 0) {
+                k--;
+            }
+            if (k < 0) {
+                if (nums[left++] == 0) {
+                    k++;
+                }
+            }
+        }
+        return right - left;
+    }
