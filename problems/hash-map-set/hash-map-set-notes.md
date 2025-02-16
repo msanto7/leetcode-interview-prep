@@ -9,7 +9,8 @@
 
 # C#
     
-    - this would be most similar to a dictionary in C#
+    Hashmap
+        - this would be most similar to a dictionary in C# - https://www.geeksforgeeks.org/c-sharp-dictionary-with-examples/
 
         Dictionary<int, string> map = new Dictionary<int, string>();
 
