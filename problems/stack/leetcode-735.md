@@ -76,3 +76,39 @@
 
         return space.Reverse().ToArray();
     }
+
+
+# Optimized Solution - (Time: O(n), Space: O(n))
+
+    - here is a chatGPT clean up of the logic...removes my tracking variables...
+    - also use peek and top references to clean up the collision logic...pretty impressive that it can do this
+
+
+    public int[] AsteroidCollision(int[] asteroids) {
+        Stack<int> stack = new Stack<int>();
+
+        foreach (int asteroid in asteroids) {
+            bool destroyed = false;
+
+            while (stack.Count > 0 && asteroid < 0 && stack.Peek() > 0) {
+                int top = stack.Peek();
+
+                if (Math.Abs(top) > Math.Abs(asteroid)) {
+                    destroyed = true;
+                    break;
+                } else if (Math.Abs(top) == Math.Abs(asteroid)) {
+                    stack.Pop();
+                    destroyed = true;
+                    break;
+                } else {
+                    stack.Pop();
+                }
+            }
+
+            if (!destroyed) {
+                stack.Push(asteroid);
+            }
+        }
+
+        return stack.Reverse().ToArray();
+    }
