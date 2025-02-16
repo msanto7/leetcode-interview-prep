@@ -11,6 +11,11 @@
     
     - this would be most similar to a dictionary in C#
 
+        Dictionary<int, string> map = new Dictionary<int, string>();
+
+    HashSet
+        HashSet<int> s = new HashSet<int>();
+
 ## When to use
 
     - frequency counts
