@@ -3,7 +3,7 @@
     - hash maps and hash sets are key-value pair stores used for fast lookup, insertion, and deletion
     - Hash sets are a more specific version that only stores unique unordered values
     - they provide constant time O(1) standard operations
-    - the keys are hashed using a has function and the result determines the index in an array
+    - the keys are hashed using a hash function and the result determines the index in an array
     - 
 
 
@@ -13,7 +13,7 @@
 
         Dictionary<int, string> map = new Dictionary<int, string>();
 
-    HashSet
+    HashSet - https://www.geeksforgeeks.org/hashset-in-c-sharp-with-examples/ 
         HashSet<int> s = new HashSet<int>();
 
 ## When to use
