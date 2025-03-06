@@ -16,7 +16,7 @@
     - looks like there is a multiple stack solution...and also a recurive solution
 
 
-# Primtive Solution - (Time: O(n), Space: O(n))
+# Primtive Solution - (Time: O(n^2), Space: O(n))
 
     public string DecodeString(string s) {
 
