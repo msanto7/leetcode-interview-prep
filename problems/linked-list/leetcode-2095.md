@@ -64,6 +64,29 @@
 # Optimized Solution - (Time: O(n), Space: O(1))
 
     - so a fast and slow pointer can be used to only traverse the linked list once while figuring out the middle element
+    - pretty easy to understand...and cleans up the code quite a bit
+
+
+    public ListNode DeleteMiddle(ListNode head) {
+
+        ListNode prev = head;
+        ListNode slow = head;
+        ListNode fast = head;
+
+        if (head.next == null) { return null; }
+
+        // determine node count
+        while (fast != null && fast.next != null)
+        {
+            prev = slow;
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        prev.next = slow.next;
+
+        return head;
+    }
 
 
 
