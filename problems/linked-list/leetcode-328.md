@@ -13,7 +13,7 @@
 
 # Primtive Solution - (Time: O(n), Space: O(1))
 
-    - 
+    - fairly intuitive solution just updating pointers to rearrange
 
 
     public ListNode OddEvenList(ListNode head) {
