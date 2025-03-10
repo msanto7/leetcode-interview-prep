@@ -18,7 +18,7 @@
     - so now how do I optimize this...
 
 
-# Recurisve Solution - (Time: O(n), Space: O(n))
+# Recurisve Solution - (Time: O(n + m), Space: O(n + m))
 
     - here is my first succesful solution...just building lists for each leaf sequence and then comparing at the end
     - used recursion to traverse the trees
