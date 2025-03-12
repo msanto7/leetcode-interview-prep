@@ -11,7 +11,24 @@
     - 
 
 
-# Primitive Solution - (Time: O(n), Space: O(n))
+# Recursive Solution - (Time: O(n), Space: O(n))
+
+    public class Solution {
+        private int numGood = 0;
+        public int GoodNodes(TreeNode root) {
+            DFS(root, Int32.MinValue);
+            return numGood;
+        }
+
+        public void DFS(TreeNode node, int maxPath)
+        {
+            if (node.val >= maxPath) { numGood++; }
+
+            if (node.right != null) { DFS(node.right, Math.Max(node.val, maxPath)); }
+
+            if (node.left != null) { DFS(node.left, Math.Max(node.val, maxPath)); }
+        }
+    }
 
 
 
