@@ -8,7 +8,9 @@
     - I almost feel like using a stack and traversing the tree while pushing the values on the stack helps keep track of the values inbeteen X and the root
     - I think I am going to try to traverse the tree like normal recursive DFS
     - so the idea is that whatever node i am at...if it is less than the root or an node inbetween...then it is not a good node
-    - 
+    
+    - I had trouble getting to the exact recursive solution but it makes sense easily after loooking through it
+    - I am going to implement the iterative solution for this problem as well so I am exposed to how that works
 
 
 # Recursive Solution - (Time: O(n), Space: O(n))
@@ -29,6 +31,12 @@
             if (node.left != null) { DFS(node.left, Math.Max(node.val, maxPath)); }
         }
     }
+
+
+# Iterative Solution - (Time: O(n), Space: O(n))
+
+    - so for the iterative solution we need to implement a stack to keep track of the calls
+    - 
 
 
 

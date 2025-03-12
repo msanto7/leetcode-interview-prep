@@ -13,6 +13,13 @@
 
     - there are both recursive and iterative implementations that have there ups and downs
 
+        Recursive Solution
+            - clean and easy to read code
+            - uses the call stack to handle the recursive calls without us having to manually manage them
+
+        Iterative Solution
+            - can be used to avoid stack overflow from recursive calls on deep trees
+
 # C#
 
 
