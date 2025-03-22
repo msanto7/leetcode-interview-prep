@@ -36,7 +36,9 @@
 # Iterative Solution - (Time: O(n), Space: O(n))
 
     - so for the iterative solution we need to implement a stack to keep track of the calls
-    - 
+    - we are essentially imitating the call stack from the recursive solution
+
+    
 
 
 

@@ -20,6 +20,9 @@
         Iterative Solution
             - can be used to avoid stack overflow from recursive calls on deep trees
 
+    - Time complexity
+        - depth first prioritiezes depth...so the call stack can be as large as the height of the tree
+
 # C#
 
 
