@@ -19,6 +19,85 @@
     - so took a look at the editorial to get my bearings 
     - they are using a hashmap almost like a stack as they process through the tree
 
+    - essentially we look back by assessing how many nodes = whatever the target sum is minus the current node value
 
 
-# Recursive Solution - (Time: O(n), Space: O(n))
+
+# Recursive Solution - (Time: O(n^2) for unbalance tree O(Nlog(n) for balanced), Space: O(n))
+
+    - had an annoying edge case test in leetcode where I had to change from int to long for the targetSum variable
+
+    public class Solution {
+        public int PathSum(TreeNode root, long targetSum) {
+            if (root == null) { return 0; }
+            return DFS(root, targetSum) + PathSum(root.left, targetSum) + PathSum(root.right, targetSum);
+        }
+
+        public int DFS(TreeNode node, long targetSum)
+        {
+            if (node.val == null) return 0;
+            var numGood = (node.val == targetSum) ? 1 : 0;
+            if (node.left != null) { numGood += DFS(node.left, targetSum - node.val); }
+            if (node.right != null) { numGood += DFS(node.right, targetSum - node.val); }
+
+            return numGood;
+        }
+    }
+
+
+# Optimized Solution - (Time: O(n), Space: O(n))
+PrefixSum and Hashmap approach get you to O(N) solution
+
+    - prefix sum solution generated from copilot
+
+
+    public class Solution {
+        public int PathSum(TreeNode root, int targetSum) {
+            // Dictionary to store the prefix sums and their counts
+            var prefixSumCount = new Dictionary<long, int>();
+            // Initialize with 0 sum to handle paths starting from the root
+            prefixSumCount[0] = 1;
+
+            return DFS(root, 0, targetSum, prefixSumCount);
+        }
+
+        private int DFS(TreeNode node, long currentSum, int targetSum, Dictionary<long, int> prefixSumCount) {
+            if (node == null) {
+                return 0;
+            }
+
+            // Update the current prefix sum
+            currentSum += node.val;
+
+            // Calculate the number of valid paths ending at the current node
+            long targetPrefixSum = currentSum - targetSum;
+            int numPaths = prefixSumCount.ContainsKey(targetPrefixSum) ? prefixSumCount[targetPrefixSum] : 0;
+
+            // Update the prefix sum count for the current sum
+            if (!prefixSumCount.ContainsKey(currentSum)) {
+                prefixSumCount[currentSum] = 0;
+            }
+            prefixSumCount[currentSum]++;
+
+            // Recurse into the left and right subtrees
+            numPaths += DFS(node.left, currentSum, targetSum, prefixSumCount);
+            numPaths += DFS(node.right, currentSum, targetSum, prefixSumCount);
+
+            // Backtrack: remove the current sum from the prefix sum count
+            // to avoid affecting other paths
+            prefixSumCount[currentSum]--;
+            if (prefixSumCount[currentSum] == 0) {
+                prefixSumCount.Remove(currentSum);
+            }
+
+            return numPaths;
+        }
+    }
+
+
+
+
+
+
+
+
