@@ -16,7 +16,7 @@
 
 
 
-# Recursive Solution - (Time: O(n), Space: O(n))
+# Recursive Solution - (Time: O(n2), Space: O(n))
 
     - so I implemented this solution but it was timing out because it literally iterates and finds the left and right zig zags for every single node instead of optimizing and paying attention to nodes we already calculated
     - going to read through the editorial and see what other options are out there
@@ -61,3 +61,41 @@
             return 0;
         }
     }
+
+
+# Optimized Solution - (Time: O(n), Space: O(n))
+
+    - so in general my solution was on track...but i needed to combine the methods to avoid the double recursion 
+    - this solution handles starting at a new node inline based on the right/left condition so we only touch each node once technically
+
+
+    public class Solution {
+        public int LongestZigZag(TreeNode root) {
+            TreeNode curr = root;        
+            return DFS(root, true, 0, 0);
+        }
+
+        public int DFS(TreeNode node, bool right, int zagCount, int longestZag)
+        {
+            if (node == null) { return longestZag; }
+
+            longestZag = Math.Max(zagCount, longestZag);
+
+            if (right)
+            {
+                longestZag = Math.Max(DFS(node.right, false, zagCount + 1, longestZag), DFS(node.left, true, 1, longestZag));
+            }
+            else
+            {
+                longestZag = Math.Max(DFS(node.left, true, zagCount + 1, longestZag), DFS(node.right, false, 1, longestZag));
+            }
+
+            return longestZag;
+        }
+    }
+
+
+
+
+
+
