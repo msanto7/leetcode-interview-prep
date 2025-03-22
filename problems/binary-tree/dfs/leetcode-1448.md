@@ -37,9 +37,27 @@
 
     - so for the iterative solution we need to implement a stack to keep track of the calls
     - we are essentially imitating the call stack from the recursive solution
+    - then the meat of it is the same concept...check the value against the max so far in this current path...
+    - then push the children nodes if they exist..on the stack and update the max so far if needed
 
-    
 
+    public class Solution {
+        public int GoodNodes(TreeNode root) {
+            Stack<Tuple<TreeNode, int>> s = new Stack<Tuple<TreeNode, int>>();
+            int numGood = 0;
+            s.Push(new Tuple<TreeNode, int>(root, Int32.MinValue));
+
+            while (s.Any())
+            {
+                var currNode = s.Pop();
+                if (currNode.Item1.val >= currNode.Item2) { numGood++; }
+                if (currNode.Item1.right != null) { s.Push(new Tuple<TreeNode, int> (currNode.Item1.right, Math.Max(currNode.Item2, currNode.Item1.val) )); }
+                if (currNode.Item1.left != null) { s.Push(new Tuple<TreeNode, int> (currNode.Item1.left, Math.Max(currNode.Item2, currNode.Item1.val) )); }
+            }
+
+            return numGood;
+        }
+    }
 
 
 
