@@ -37,9 +37,30 @@
     }
 
 
+# Optimized Solution - (Time: O(n), Space: O(n))
 
+    - we can use a Dictionary/HashTable to speed up the brute force solution here
+    - 
 
+    public int[] TwoSum(int[] nums, int target) {
 
+        Dictionary<int, int> values = new Dictionary<int, int>();
+        
+        // fill the dictionary
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (values.ContainsKey(target - nums[i]) && i != values[target - nums[i]])
+            {
+                return new int[] { i, values[target - nums[i]] };   
+            }
+            if (!values.ContainsKey(nums[i]))
+            {
+                 values.Add(nums[i], i);   
+            }
+        }
+        
+        return null;
+    }
 
 
 
