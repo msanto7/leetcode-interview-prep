@@ -19,10 +19,32 @@
     - I am not removing the indice technically when iterating through and finding a match
     - and I am not adding the individual strings that have no match
 
+    - looked through the editorial after a while because my solution was not taking advantage of some of the properties of anagrams
+    - rewrote it using the idea that a sorted string and its sorted anagram are equal
+
 
 # Primitive Solution - (Time: O(n), Space: O(n))
 
+    - based on sorted strings
+    
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
 
+        var d = new Dictionary<string, List<string>>();
+        foreach (var s in strs)
+        {
+            var c = s.ToCharArray();
+            Array.Sort(c);
+            var key = new String(c);
+
+            if (!d.ContainsKey(key))
+            {
+                d[key] = new List<string>();
+            }
+            d[key].Add(s);
+        }
+
+        return new List<IList<string>>(d.Values);
+    }   
 
 
 
