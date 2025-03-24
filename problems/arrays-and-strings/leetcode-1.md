@@ -40,26 +40,20 @@
 # Optimized Solution - (Time: O(n), Space: O(n))
 
     - we can use a Dictionary/HashTable to speed up the brute force solution here
-    - 
+    - we are checking for the complement of the current array value as we iterate to determine if it already exists...and if so we have the 2 indices needed 
+
 
     public int[] TwoSum(int[] nums, int target) {
+        Dictionary<int, int> d = new Dictionary<int, int>();
 
-        Dictionary<int, int> values = new Dictionary<int, int>();
-        
-        // fill the dictionary
         for (int i = 0; i < nums.Length; i++)
         {
-            if (values.ContainsKey(target - nums[i]) && i != values[target - nums[i]])
-            {
-                return new int[] { i, values[target - nums[i]] };   
-            }
-            if (!values.ContainsKey(nums[i]))
-            {
-                 values.Add(nums[i], i);   
-            }
+            int comp = target - nums[i];
+            if (d.ContainsKey(comp) && d[comp] != i) { return new int[] { i, d[comp] }; }
+            if (!d.ContainsKey(nums[i])) { d.Add(nums[i], i); }
         }
-        
-        return null;
+
+        return new int[] {};
     }
 
 
