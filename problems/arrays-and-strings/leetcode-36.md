@@ -1,5 +1,6 @@
 # LeetCode -- 36. Valid Sudoku (Medium)
 
+    - validating a 9x9 sudoku board
     - 
 
 
