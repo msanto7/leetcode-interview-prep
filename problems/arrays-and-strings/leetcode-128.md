@@ -10,10 +10,10 @@
     - 
 
 
-# Primitive Solution - (Time: O(n), Space: O(n))
+# Primitive Solution - (Time: O(nlogn), Space: O(n))
 
     - so here is my original solution with sorting the array
-    - but this keeps us out o O(n) for the most part so going to try another method
+    - but this keeps us in O(nlogn) for most sorting algorithm implementations so going to try another method
 
     public int LongestConsecutive(int[] nums) {
         if (nums.Length == 0) { return 0; }
@@ -46,6 +46,30 @@
     - so there is a method that uses a hashset somehow
     - I guess if we just iterate through and insert each value...
     - then we can iterate through the hashset and 
+    - oddly this exceeds time limit
+
+    public int LongestConsecutive(int[] nums) {
+        HashSet<int> h = new HashSet<int>(nums);
+        int maxLength = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (!h.Contains(nums[i] - 1))
+            {
+                int currentNum = nums[i];
+                int currentStreak = 1;
+
+                while (h.Contains(currentNum + 1))
+                {
+                    currentNum  += 1;
+                    currentStreak += 1;
+                }
+
+                maxLength = Math.Max(maxLength, currentStreak);
+            }
+        }
+
+        return maxLength;
+    }
 
 
 
