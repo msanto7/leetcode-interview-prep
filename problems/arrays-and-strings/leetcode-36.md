@@ -20,7 +20,7 @@
 
 # Primitive Solution - (Time: O(n^2), Space: O(n))
 
-    -
+    - we re nesting for loops...but also we know we are only ever going to iterate through 18 times...so is it really?
 
     public bool IsValidSudoku(char[][] board) {
         HashSet<char> hRow = new HashSet<char>();
