@@ -1,4 +1,3 @@
-
 # LeetCode -- 238. Product of Array Except Self (Medium)
 
     - so there are 2 caveats here that are important
