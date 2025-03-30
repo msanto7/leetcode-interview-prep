@@ -43,6 +43,10 @@
 
 # Optimized Solution - (Time: O(n), Space: O(n))
 
+    - so there is a method that uses a hashset somehow
+    - I guess if we just iterate through and insert each value...
+    - then we can iterate through the hashset and 
+
 
 
 
