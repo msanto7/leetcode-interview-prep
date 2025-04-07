@@ -13,17 +13,17 @@
 
     - had trouble getting through this on my own
     - had to consult the solutions...in theory it makes sense but still wasn't really clicking as to how to iterate through
-    
+    - so basically we are sorting the array...fixing numbers up to the first half of the array
+    - and then handling it as if it is two sum by fixing the number we are at
+    - and during our initial loop we are skipping duplicate values in the array
+    - so O(nlogn) to sort the array...and we call our helper function basically n times
+
 
 
     public class Solution {
         public IList<IList<int>> ThreeSum(int[] nums) {
             List<IList<int>> trips = new List<IList<int>>();
             Array.Sort(nums);
-            int l = 0;
-            int m = 1;
-            int r = nums.Length - 1;
-            Dictionary<int, int> h = new Dictionary<int, int>();
 
             for (int i = 0; i < nums.Length && nums[i] <= 0; i++)
             {
