@@ -25,6 +25,10 @@
 
     - so here is the 2 pointer solution
     - trying to fully understand it though
+    https://neetcode.io/solutions/trapping-rain-water
+    - alright so it makes sense actually...we are taking the minimum of the max left and right borders form where our current pointer is
+    - and so we are calculating the area at each specific position individually 
+    - and we swap back and forth from left and right based on the hhighest hight max being on the opposing side...because that is our relevant border
 
     public int Trap(int[] height) {
         int l = 0;
