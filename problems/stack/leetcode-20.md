@@ -16,8 +16,48 @@
 
 # Primtive Solution - (Time: O(n^2), Space: O(n))
 
+    - here is my first terribly implemented stack solution
+    - I kept having one off issues for edge cases and things i just ignored at first
+    - i will really need to pay attention to those things while i am solving these eeven just on my own
     - 
 
+    public bool IsValid(string s) {
+        Stack<char> stack = new Stack<char>();
+        int i = 1;
+
+        if (s.Length <= 1) { return false; }
+        if (s[0] == '(' || s[0] == '{' || s[0] == '[')
+        {
+            stack.Push(s[0]);
+        }
+        else 
+        {
+            return false;
+        }
+
+        while (i < s.Length)
+        {
+            if (s[i] == '(' || s[i] == '{' || s[i] == '[')
+            {
+                stack.Push(s[i]);
+            }
+            else
+            {
+                if (stack.Count() == 0) {return false; }
+                else
+                {
+                    var open = stack.Pop();
+                    if (open == '(' && s[i] != ')') { return false; }
+                    else if (open == '{' && s[i] != '}') { return false; }
+                    else if (open == '[' && s[i] != ']') { return false; }
+                }
+            }
+
+            i++;
+        }
+
+        return stack.Count() == 0 && i == s.Length ? true : false;
+    }
 
 
 
@@ -25,4 +65,4 @@
 
 
 
-    
+
