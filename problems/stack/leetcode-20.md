@@ -14,12 +14,14 @@
     - if stack is empty and string is not done iterating...return false
 
 
-# Primtive Solution - (Time: O(n^2), Space: O(n))
+# Primtive Solution - (Time: O(n), Space: O(n))
 
     - here is my first terribly implemented stack solution
     - I kept having one off issues for edge cases and things i just ignored at first
     - i will really need to pay attention to those things while i am solving these eeven just on my own
-    - 
+    - there is a way to improve this with a dictionary mapping the types of brakcets to there closing counterpart instead of my if statements
+    - also we might as well use a for loop because if valid we need to iterate through everything
+    - and if not the while loop conditrion still isn't determing valid anyway
 
     public bool IsValid(string s) {
         Stack<char> stack = new Stack<char>();
