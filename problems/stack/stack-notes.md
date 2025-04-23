@@ -2,7 +2,7 @@
 
     - LIFO - last in first out
     - push, pop, peek
-    - useful for problems where you need to keep track of previous states or elemints in a specific order (think call stack)
+    - useful for problems where you need to keep track of previous states or elements in a specific order (think call stack)
 
     - Look for LIFO structure: Whenever the problem requires you to process elements in reverse order, 
         or maintain states that need to be "undone" or "popped," stacks are a good fit.
