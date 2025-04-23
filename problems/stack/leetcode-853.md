@@ -20,7 +20,9 @@
 
     - could not have come up with this on my own at the moment...but it makes sense
     - the formula for time to get to the target is crucial here...along with descending order sort
-    - 
+    - we figure out if a car is going to catch up to another by whether or not there time is equal or greater than the car in front of it
+    - and then we pop the cars where this is the case...representing adding this car to the 'fleet'
+    - so the count remaining in the stack at the end is the final count of fleets
 
 
     public int CarFleet(int target, int[] position, int[] speed) {
