@@ -10,11 +10,8 @@
     
     - so I can add the midpoint for the columns i suppose...and then determine each time if it is in that specific row
     - wondering if I can first find the row...then find the column if possible
-    - 
 
-
-
-# Primitive Solution - (Time: O(n), Space: O(n))
+# Primitive Solution - (Time: O(log(m * n)), Space: O(n))
 
     - came up with my own solution for this...found the column first using binary search...
     - then searched within that row
