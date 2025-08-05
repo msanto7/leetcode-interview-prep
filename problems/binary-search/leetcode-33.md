@@ -7,6 +7,30 @@
 
 # Primitive Solution - (Time: O(n), Space: O(n))
 
+    - this was my first try still failing one of the cases right now
+
+    public int Search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.Length - 1;
+
+        while (left < right)
+        {
+            var mid = left + (right - left) / 2;
+            if (nums[mid] == target) { return mid; }
+            if (nums[left] == target) { return left; }
+            if (nums[right] == target) { return right; }
+            if (nums[left] >= nums[right] && target > nums[left] && target < nums[right])
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid;
+            }
+        }
+        
+        return nums[left] == target ? left : -1;
+    }
 
 
 
