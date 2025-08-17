@@ -8,6 +8,7 @@
 # Primitive Solution - (Time: O(n), Space: O(n))
 
     - this was my first try still failing one of the cases right now
+    - I am skipping over the target value with my current logic...I need to handle the left side better somehow...I also feel like the pivot is off
 
     public int Search(int[] nums, int target) {
         int left = 0;
