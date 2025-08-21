@@ -3,7 +3,7 @@
     - alright so we get a rotated sorted array
     - we are returning the minimum element -- the value not the index
     - specifically asks for an o(log(n)) algorithm so already sort of thinking binary search
-    - because otherwise we could just can the array and return te first element that is less than the previous i guess
+    - because otherwise we could just can the array and return the first element that is less than the previous i guess
     - but worst case on that is O(n)
     - i still think binary search makes sense...but the reality is because of the pivoting there is no guarantee that the minimum value is to the right or left of the chosen mid value
     - so how can I tweak the idea to work in this case
